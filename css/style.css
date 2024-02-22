@@ -1,0 +1,117 @@
+/* Var */
+:root {
+  --main-duartoion: .3s;
+  --dark: #1A1A25;
+  --sec-dark: #242435;
+}
+/* Var */
+/* Start Globale Ruls */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+body {
+  background: #f4f8f9;
+  font-family: "Chakra Petch", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 80vh;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width:768px){
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width:992px){
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width:1200px){
+  .container {
+    width: 1170px;
+  }
+}
+/* End Globale Ruls */
+
+.heading {
+  text-align: center;
+  padding: 20px;
+  h1 {
+    font-weight: 500;
+    font-size: 45px;
+  }
+}
+
+.convert-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  .change {
+    position: absolute;
+    box-shadow: 0px 5px 10px 0px #0000001a;
+    background: #3acd99 url(../img/swap-binarytrans.svg) no-repeat 9px 7px;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    translate: -50% 0%;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  .title {
+    background: #3acd99;
+    padding: 8px 20px;
+    width: fit-content;
+    color: #f5f5f5;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, .01);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--main-duartoion);
+    margin-bottom: 10px;
+  }
+  .content {
+    width: 450px;
+    height: 300px;
+    border-radius: 8px;
+    border: 1px solid #3acd99;
+    resize: none;
+    padding: 10px;
+    transition: var(--main-duartoion);
+    font-size: 18px;
+    box-shadow: 0px 5px 15px 0px #3acd9933;
+  }
+  .content.error {
+    background: #ef53509e;
+  }
+  .content:focus {
+    outline: none;
+  }
+  .title.animate,
+  .content.animate {
+    scale: 0;
+  }
+}
+@media (width <= 520px) {
+  .convert-box .binary,
+  .convert-box .decimal {
+    width: 100%;
+  }
+  .content {
+    width: 100% !important;
+    height: 200px !important;
+  }
+}
